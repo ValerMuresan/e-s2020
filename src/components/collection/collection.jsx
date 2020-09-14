@@ -6,7 +6,9 @@ const CollectionShow = ({ title, items}) => (
 <div className='collection-show'>
     <h1 className='title'> {title.toUpperCase()}</h1>
     <div className='show'>
-        {items.map(({id, ...otherItemProps}) => (
+        {items
+        .filter((item, index) => index < 4)
+        .map(({id, ...otherItemProps}) => (
             <CollectionItem key={id} {...otherItemProps} />
         ))}
     </div>
